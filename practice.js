@@ -1,17 +1,21 @@
-const myPromise = new Promise(function(resolve, reject){
+const myPromise = new Promise((resolve, reject)=>{
     const a = 10
     const b = 10
 
-    setTimeout((a, b) => {
+    setTimeout( ()=>{
         if(a==b){
             resolve("resolved")
-        }else{
+        }
+        else{
             reject("rejected")
         }
-    }, 2000);
+    }, 2000)
 })
 
 myPromise.then((result)=>{
     console.log(result)
+}).catch((err)=>{
+    console.log(err)
 })
-console.log("here before you")
+
+console.log("hi, me first")
